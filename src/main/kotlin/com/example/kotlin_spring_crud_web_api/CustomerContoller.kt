@@ -43,6 +43,7 @@ class CustomerController(val customerService: CustomerService) {
      * @param request
      * @return
      */
+    @PutMapping("/customers/{id}")
     fun update(@PathVariable("id") id: Int, @RequestBody request: CustomerRequest): String {
         customerService.updateCustomer(id, request.firstName, request.lastName)
         return """
@@ -76,8 +77,8 @@ class CustomerController(val customerService: CustomerService) {
  * @propetry lastName
  */
 data class CustomerRequest(
-    @JsonProperty("firstName") val firstName: String,
-    @JsonProperty("lastName") val lastName: String
+    @JsonProperty("first_name") val firstName: String,
+    @JsonProperty("last_name") val lastName: String
 )
 
 /**
