@@ -1,5 +1,7 @@
 package com.example.kotlin_spring_crud_web_api
 
+import org.springframework.stereotype.Service
+
 /**
  * Customer 操作を行うメソッドをまとめるインターフェース
  *
@@ -44,6 +46,7 @@ interface CustomerService {
  *
  * @property customerRepository
  */
+@Service
 class CustomerServiceImpl(val customerRepository: CustomerRepository) : CustomerService {
     override fun insertCustomer(firstName: String, lastName: String) {
         customerRepository.add(firstName, lastName)
