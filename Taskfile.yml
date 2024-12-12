@@ -1,0 +1,22 @@
+version: '3'
+
+tasks:
+  run-server:
+    cmds:
+      - $HOME/kotlin-spring-crud-web-api/gradlew bootRun
+    silent: true
+
+  up-postrges:
+    cmds:
+      - docker compose up -d
+    silent: true
+
+  down-postgres:
+    cmds:
+      - docker compose down
+    silent: true
+
+  restart-posgres:
+    cmds:
+      - task: down-postgres
+      - task: up-postgres
