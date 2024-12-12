@@ -7,7 +7,7 @@ $ make up
 $ make run
 ```
 
-## Test API
+## APIのテスト
 
 - カスタマーを取得
 
@@ -43,3 +43,7 @@ $ curl --location --request PUT 'http://localhost:8080/customers/3' \
 ```shell
 $ curl --location --request DELETE 'http://localhost:8080/customers/3'
 ```
+
+## Ref
+
+- https://zenn.dev/msksgm/books/implementing-server-side-kotlin-development
